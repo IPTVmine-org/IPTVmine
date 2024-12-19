@@ -42,6 +42,37 @@ By working on this app, we aim to:
 <img src="5.png" width="450px"/>  |  
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clickable Ad</title>
+    <style>
+        .clickable-ad {
+            display: block;
+            max-width: 100%; /* Responsive */
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function openWebsite() {
+            window.open("https://www.codester.com/items/52651/internet-speed-tester-app-android-source-code", "_blank");
+        }
+    </script>
+</head>
+<body>
+    <img 
+        src="https://www.codester.com/static/uploads/items/000/052/52651/preview-xl.jpg" 
+        alt="Droid Info Lite Ad" 
+        class="clickable-ad" 
+        onclick="openWebsite()"
+    >
+</body>
+</html>
+
+
+
 ## Disclaimer 📢
 
 - IPTV operates as a simple m3u streaming player.
