@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.samyak2403.iptvmine.Ads.MyInterstitialAds
 import com.samyak2403.iptvmine.R
 import com.samyak2403.iptvmine.adapter.ChannelsAdapter
 import com.samyak2403.iptvmine.model.Channel
@@ -45,7 +46,10 @@ class HomeFragment : Fragment() {
         progressBar = view.findViewById(R.id.progressBar)
         recyclerView = view.findViewById(R.id.recyclerView)
 
-        adapter = ChannelsAdapter(emptyList()) { channel: Channel ->
+        // Use requireActivity() to get the Activity context
+        val interstitialAds = MyInterstitialAds(requireActivity())
+
+        adapter = ChannelsAdapter(emptyList(), interstitialAds) { channel: Channel ->
             PlayerActivity.start(requireContext(), channel)
         }
 
@@ -107,7 +111,6 @@ class HomeFragment : Fragment() {
         }
     }
 }
-
 
 
 
