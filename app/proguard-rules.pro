@@ -135,9 +135,32 @@
     <methods>;
 }
 
-# Preserve methods used for extracting data from M3U files
+# Keep the ChannelsProvider ViewModel class and its members
 -keepclassmembers class com.samyak2403.iptvmine.provider.ChannelsProvider {
-    private String extractChannelName(...);
-    private String extractLogoUrl(...);
-    private boolean isValidUrl(...);
+    *;
 }
+
+# Keep the Channel model class
+-keepclassmembers class com.samyak2403.iptvmine.model.Channel {
+    *;
+}
+
+# Prevent obfuscation of methods used for reflection by Android Lifecycle
+-keepclassmembers class * extends androidx.lifecycle.ViewModel {
+    public <init>(...);
+}
+
+# Keep methods and fields annotated with @SerializedName or similar (if using serialization)
+-keepclassmembers class * {
+    @com.google.gson.annotations.SerializedName <fields>;
+}
+
+# Keep coroutine-related classes and methods to avoid runtime issues
+-dontwarn kotlinx.coroutines.**
+-keep class kotlinx.coroutines.** { *; }
+-keepclassmembers class kotlinx.coroutines.** { *; }
+
+# Keep URL and HttpURLConnection usage (common in network calls)
+-keep class java.net.URL { *; }
+-keep class java.net.HttpURLConnection { *; }
+

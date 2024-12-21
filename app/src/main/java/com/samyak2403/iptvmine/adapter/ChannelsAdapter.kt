@@ -14,12 +14,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.samyak2403.iptvmine.Ads.MyInterstitialAds
 import com.samyak2403.iptvmine.R
 import com.samyak2403.iptvmine.model.Channel
 
 
 class ChannelsAdapter(
     private var channels: List<Channel>,
+    private val interstitialAds: MyInterstitialAds,
     private val onChannelClicked: (com.samyak2403.iptvmine.model.Channel) -> Unit
 ) : RecyclerView.Adapter<ChannelsAdapter.ChannelViewHolder>() {
 
@@ -52,8 +54,14 @@ class ChannelsAdapter(
                 .placeholder(R.drawable.ic_tv)
                 .into(logoImageView)
 
+//            itemView.setOnClickListener {
+//                onChannelClicked(channel)
+//            }
+
             itemView.setOnClickListener {
-                onChannelClicked(channel)
+                interstitialAds.showInterstitialAds(placementId = itemView.context.getString(R.string.interstitial_android)) {
+                    onChannelClicked(channel)
+                }
             }
         }
     }

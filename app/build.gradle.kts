@@ -11,8 +11,8 @@ android {
         applicationId = "com.samyak2403.iptvmine"
         minSdk = 21
         targetSdk = 34
-        versionCode = 5
-        versionName = "1.0.4"
+        versionCode = 6
+        versionName = "1.0.5"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -50,7 +50,8 @@ dependencies {
     //for exoplayer
     implementation(libs.exoplayerCore)
     implementation(libs.exoplayerUi)
-
+    // Unity Ads
+    implementation(libs.unity.ads)
     //for playing online content
     implementation(libs.exoplayerDash)
     implementation(libs.androidx.fragment)
@@ -64,7 +65,8 @@ dependencies {
 
     implementation("com.google.code.gson:gson:2.8.8")
 
-    implementation("com.squareup.okhttp3:okhttp:4.9.3")
+    implementation("com.squareup.okhttp3:okhttp:4.11.0")
+
 
 //    implementation ("com.github.halilozercan:BetterVideoPlayer:2.0.0-alpha01")
 //    implementation ("com.github.halilozercan:BetterVideoPlayer:v1.1.0")

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IPTV Mine</string>
+    <string name="interstitial_android">Interstitial_Android</string>
+    <string name="game_id">5757725</string>
 </resources>
