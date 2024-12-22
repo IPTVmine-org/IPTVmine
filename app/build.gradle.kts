@@ -11,8 +11,8 @@ android {
         applicationId = "com.samyak2403.iptvmine"
         minSdk = 21
         targetSdk = 34
-        versionCode = 6
-        versionName = "1.0.5"
+        versionCode = 7
+        versionName = "1.0.6"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -59,6 +59,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation (libs.smoothbottombar)
     // Fragment library
     implementation("androidx.fragment:fragment-ktx:1.6.0")
     implementation("com.github.bumptech.glide:glide:4.16.0")
@@ -67,6 +68,15 @@ dependencies {
 
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
 
+    implementation ("com.airbnb.android:lottie:4.2.2")
+
+    // SpeedTest Library
+    implementation("fr.bmartel:jspeedtest:1.32.1")
+    // Gauge Library
+    implementation("com.github.Gruzer:simple-gauge-android:0.3.1")
+
+
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
 
 //    implementation ("com.github.halilozercan:BetterVideoPlayer:2.0.0-alpha01")
 //    implementation ("com.github.halilozercan:BetterVideoPlayer:v1.1.0")

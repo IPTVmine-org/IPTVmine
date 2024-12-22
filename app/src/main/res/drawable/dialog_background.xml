@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Samyak Kamble on 12/22/24, 12:54 PM
+  ~  Copyright (c) 2024 . All rights reserved.
+  ~  Last modified 12/22/24, 12:54 PM
+  -->
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="12dp" />
+    <solid android:color="@android:color/white" />
+    <padding
+        android:left="8dp"
+        android:right="8dp"
+        android:top="8dp"
+        android:bottom="8dp" />
+
+</shape>

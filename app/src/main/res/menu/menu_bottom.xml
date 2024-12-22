@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Created by Samyak Kamble on 12/22/24, 10:57 AM
+  ~  Copyright (c) 2024 . All rights reserved.
+  ~  Last modified 12/22/24, 10:57 AM
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/tv_logo"/>
+
+    <item
+        android:id="@+id/about"
+        android:title="@string/about"
+        android:icon="@drawable/about_app"/>
+
+
+
+</menu>
