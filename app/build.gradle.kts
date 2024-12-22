@@ -11,8 +11,8 @@ android {
         applicationId = "com.samyak2403.iptvmine"
         minSdk = 21
         targetSdk = 34
-        versionCode = 7
-        versionName = "1.0.6"
+        versionCode = 8
+        versionName = "1.0.7"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -75,6 +75,8 @@ dependencies {
     // Gauge Library
     implementation("com.github.Gruzer:simple-gauge-android:0.3.1")
 
+    //Toast
+    implementation ("com.github.samyak2403:TastyToasts:1.0.2")
 
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 

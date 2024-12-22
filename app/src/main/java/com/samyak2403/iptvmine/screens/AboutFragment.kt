@@ -14,6 +14,7 @@ import com.samyak2403.iptvmine.Ads.showBannerAds
 import com.samyak2403.iptvmine.InternetSpeed.InternetSpeedActivity
 import com.samyak2403.iptvmine.R
 import com.samyak2403.iptvmine.databinding.FragmentAboutBinding
+import com.samyak2403.tastytoast.TastyToast
 import com.unity3d.services.banners.UnityBannerSize
 import okhttp3.Call
 import okhttp3.OkHttpClient
@@ -69,7 +70,9 @@ class AboutFragment : Fragment() {
 
         // Set click listeners for the cards
         binding.cardShare.setOnClickListener {
-            Toast.makeText(requireContext(), "Share App clicked", Toast.LENGTH_SHORT).show()
+            TastyToast.makeText(requireContext(), "Share App clicked", TastyToast.LENGTH_LONG, TastyToast.SUCCESS)
+
+//            Toast.makeText(requireContext(), "Share App clicked", Toast.LENGTH_SHORT).show()
             shareApp()
         }
 
@@ -78,7 +81,9 @@ class AboutFragment : Fragment() {
         }
 
         binding.cardUpdate.setOnClickListener {
-            Toast.makeText(requireContext(), "Check for updates", Toast.LENGTH_SHORT).show()
+            TastyToast.makeText(requireContext(), "Check for updates", TastyToast.LENGTH_LONG, TastyToast.INFO)
+
+//            Toast.makeText(requireContext(), "Check for updates", Toast.LENGTH_SHORT).show()
             openDownloadLink()
         }
 
@@ -92,7 +97,9 @@ class AboutFragment : Fragment() {
     }
 
     private fun fetchLiveData() {
-        Toast.makeText(requireContext(), "Error 69", Toast.LENGTH_SHORT).show()
+        TastyToast.makeText(requireContext(), "Error 69", TastyToast.LENGTH_LONG, TastyToast.ERROR)
+
+//        Toast.makeText(requireContext(), "Error 69", Toast.LENGTH_SHORT).show()
     }
 
     private fun getAppVersion(): String {

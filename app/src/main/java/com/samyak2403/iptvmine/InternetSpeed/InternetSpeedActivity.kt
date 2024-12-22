@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.ekn.gruzer.gaugelibrary.Range
+import com.samyak2403.iptvmine.Ads.MyRewardedAds
 import com.samyak2403.iptvmine.R
 import com.samyak2403.iptvmine.databinding.ActivityInternetSpeedBinding
 import fr.bmartel.speedtest.SpeedTestReport
@@ -21,6 +22,7 @@ class InternetSpeedActivity : AppCompatActivity(), ISpeedTestListener {
 
     private lateinit var binding: ActivityInternetSpeedBinding
     private lateinit var context: Context
+    private lateinit var myRewardedAds: MyRewardedAds
     private var startTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,65 +33,65 @@ class InternetSpeedActivity : AppCompatActivity(), ISpeedTestListener {
         // Set the Toolbar as the ActionBar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
-
-        // Enable the back arrow
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         context = this
+        myRewardedAds = MyRewardedAds(this)
+
         init()
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        onBackPressed() // Navigate back to the previous screen
+        onBackPressed()
         return true
     }
 
     private fun init() {
         setupGauge()
+        myRewardedAds.loadRewardedAds("Rewarded_Android")
 
         binding.startTestBT.setOnClickListener {
-            binding.startTestBT.visibility = View.GONE
-            Thread { getNetSpeed() }.start()
+            myRewardedAds.showRewardedAds("Rewarded_Android") {
+                binding.startTestBT.visibility = View.GONE
+                Thread { getNetSpeed() }.start()
+            }
         }
     }
 
     private fun setupGauge() {
-        val range = Range().apply {
+        val coolPink = Range().apply {
             color = ContextCompat.getColor(context, R.color.cool_pink)
             from = 0.0
             to = 50.0
         }
 
-        val range1 = Range().apply {
+        val yellowRange = Range().apply {
             color = ContextCompat.getColor(context, R.color.yellow)
             from = 50.0
             to = 100.0
         }
 
-        val range2 = Range().apply {
+        val greenRange = Range().apply {
             color = ContextCompat.getColor(context, R.color.cool_green)
             from = 100.0
             to = 150.0
         }
 
         with(binding.speedGauge) {
-            addRange(range)
-            addRange(range1)
-            addRange(range2)
-
+            addRange(coolPink)
+            addRange(yellowRange)
+            addRange(greenRange)
             minValue = 0.0
             maxValue = 150.0
             value = 0.0
-
-            setValueColor(ContextCompat.getColor(context, android.R.color.transparent))
+            valueColor = ContextCompat.getColor(context, android.R.color.transparent)
         }
     }
 
     private fun getNetSpeed() {
         val speedTestSocket = SpeedTestSocket()
-
-        binding.speedGauge.setValueColor(ContextCompat.getColor(context, R.color.white))
+        binding.speedGauge.valueColor = ContextCompat.getColor(context, R.color.white)
 
         startTime = System.currentTimeMillis()
         speedTestSocket.addSpeedTestListener(this)
@@ -97,27 +99,29 @@ class InternetSpeedActivity : AppCompatActivity(), ISpeedTestListener {
     }
 
     override fun onCompletion(report: SpeedTestReport) {
-        val r = report.transferRateBit.toFloat() / 1000000
+        val downloadSpeedMbps = report.transferRateBit.toFloat() / 1_000_000
+        val latencyMs = (System.currentTimeMillis() - startTime) / 600
+
         runOnUiThread {
-            binding.speedGauge.value = floor(r.toDouble())
-
-            binding.startTestBT.visibility = View.VISIBLE
-            binding.speedGauge.setValueColor(ContextCompat.getColor(context, android.R.color.transparent))
-
-            binding.speedTxt.text = String.format("%s MB/s", DecimalFormat("##").format(r))
-            binding.latencyTxt.text = String.format("%s ms", (System.currentTimeMillis() - startTime) / 600)
-            binding.startTestBT.text = getString(R.string.start)
+            binding.speedGauge.value = floor(downloadSpeedMbps.toDouble())
+            binding.speedTxt.text = String.format("%s MB/s", DecimalFormat("##").format(downloadSpeedMbps))
+            binding.latencyTxt.text = String.format("%s ms", latencyMs)
+            binding.startTestBT.apply {
+                visibility = View.VISIBLE
+                text = getString(R.string.start)
+            }
+            binding.speedGauge.valueColor = ContextCompat.getColor(context, android.R.color.transparent)
         }
-        Log.d("SpeedTest", "onCompletion: $r")
+        Log.d("SpeedTest", "onCompletion: $downloadSpeedMbps Mbps")
     }
 
     override fun onProgress(percent: Float, report: SpeedTestReport) {
-        val r = report.transferRateBit.toFloat() / 1000000
-        runOnUiThread { binding.speedGauge.value = floor(r.toDouble()) }
-        Log.d("SpeedTest", "onProgress: ${r / 1000000}")
+        val downloadSpeedMbps = report.transferRateBit.toFloat() / 1_000_000
+        runOnUiThread { binding.speedGauge.value = floor(downloadSpeedMbps.toDouble()) }
+        Log.d("SpeedTest", "onProgress: $downloadSpeedMbps Mbps")
     }
 
     override fun onError(speedTestError: SpeedTestError, errorMessage: String) {
-        Log.d("SpeedTest", "onError: $errorMessage")
+        Log.e("SpeedTest", "Error: $errorMessage")
     }
 }
