@@ -1,14 +1,12 @@
 package com.samyak2403.iptvmine
 
 import android.os.Bundle
-import android.text.TextUtils.replace
+
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.samyak2403.iptvmine.screens.AboutFragment
 import com.samyak2403.iptvmine.screens.HomeFragment
-
-import me.ibrahimsn.lib.OnItemSelectedListener
 import me.ibrahimsn.lib.SmoothBottomBar
 
 class MainActivity : AppCompatActivity() {

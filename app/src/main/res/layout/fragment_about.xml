@@ -32,30 +32,6 @@
                 android:textColor="@android:color/white"
                 android:textSize="20sp" />
 
-            <!--            <EditText-->
-            <!--                android:id="@+id/searchEditText"-->
-            <!--                android:layout_width="0dp"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_centerVertical="true"-->
-            <!--                android:layout_toStartOf="@id/search_icon"-->
-            <!--                android:background="#333333"-->
-            <!--                android:hint="Search"-->
-            <!--                android:imeOptions="actionSearch"-->
-            <!--                android:inputType="text"-->
-            <!--                android:padding="8dp"-->
-            <!--                android:singleLine="true"-->
-            <!--                android:visibility="gone" />-->
-
-            <!--            <ImageView-->
-            <!--                android:id="@+id/search_icon"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_alignParentEnd="true"-->
-            <!--                android:layout_centerVertical="true"-->
-            <!--                android:contentDescription="Search"-->
-            <!--                android:padding="8dp"-->
-            <!--                android:src="@drawable/search"-->
-            <!--                app:tint="@android:color/white" />-->
         </RelativeLayout>
     </androidx.appcompat.widget.Toolbar>
 
@@ -274,28 +250,28 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-<!--    <androidx.cardview.widget.CardView-->
-<!--        android:id="@+id/card_ads"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_margin="8dp"-->
-<!--        app:cardCornerRadius="8dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/card_share">-->
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:id="@+id/card_ads"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="8dp"-->
+    <!--        app:cardCornerRadius="8dp"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/card_share">-->
 
-<!--       -->
-<!--    </androidx.cardview.widget.CardView>-->
+    <!--       -->
+    <!--    </androidx.cardview.widget.CardView>-->
 
     <RelativeLayout
         android:id="@+id/adBannerCon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/card_share"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        app:layout_constraintTop_toBottomOf="@id/card_share" />
 
     <TextView
         android:id="@+id/tvAppVersion"

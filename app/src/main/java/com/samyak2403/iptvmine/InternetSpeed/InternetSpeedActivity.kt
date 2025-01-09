@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.ekn.gruzer.gaugelibrary.Range
-import com.samyak2403.iptvmine.Ads.MyRewardedAds
+
 import com.samyak2403.iptvmine.R
 import com.samyak2403.iptvmine.databinding.ActivityInternetSpeedBinding
 import fr.bmartel.speedtest.SpeedTestReport
@@ -22,7 +22,7 @@ class InternetSpeedActivity : AppCompatActivity(), ISpeedTestListener {
 
     private lateinit var binding: ActivityInternetSpeedBinding
     private lateinit var context: Context
-    private lateinit var myRewardedAds: MyRewardedAds
+
     private var startTime: Long = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,7 +37,7 @@ class InternetSpeedActivity : AppCompatActivity(), ISpeedTestListener {
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
         context = this
-        myRewardedAds = MyRewardedAds(this)
+
 
         init()
     }
@@ -49,13 +49,13 @@ class InternetSpeedActivity : AppCompatActivity(), ISpeedTestListener {
 
     private fun init() {
         setupGauge()
-        myRewardedAds.loadRewardedAds("Rewarded_Android")
+
 
         binding.startTestBT.setOnClickListener {
-            myRewardedAds.showRewardedAds("Rewarded_Android") {
+
                 binding.startTestBT.visibility = View.GONE
                 Thread { getNetSpeed() }.start()
-            }
+
         }
     }
 

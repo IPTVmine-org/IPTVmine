@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [1.0.8] - 2025-01-09  
 ### Added  
 - Updated **UI design** for a modern and user-friendly experience.  
-- **Fast Cannle data handling** to improve cannle speed and reliability.  
+- **Fast Channel data handling** to improve Channel speed and reliability.  
 
 ### Fixed  
 - Resolved minor bugs affecting channel loading and playback.  

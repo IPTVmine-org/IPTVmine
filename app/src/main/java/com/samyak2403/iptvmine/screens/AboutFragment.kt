@@ -7,22 +7,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
+
 import androidx.fragment.app.Fragment
-import com.samyak2403.iptvmine.Ads.showBannerAds
+
 import com.samyak2403.iptvmine.InternetSpeed.InternetSpeedActivity
 import com.samyak2403.iptvmine.R
 import com.samyak2403.iptvmine.databinding.FragmentAboutBinding
 import com.samyak2403.tastytoast.TastyToast
-import com.unity3d.services.banners.UnityBannerSize
-import okhttp3.Call
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.Callback
-import okhttp3.Response
-import org.json.JSONObject
-import java.io.IOException
+
 
 class AboutFragment : Fragment() {
 
@@ -48,21 +40,11 @@ class AboutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        // Call the showBannerAds function
-//        showBannerAds(
-//            requireActivity(), // Pass the activity context
-//            view.findViewById(R.id.adBannerCon), // Access the container view
-//            "Banner_Android", // Unity banner placement ID
-//            UnityBannerSize.standard // Specify the banner size
-//        )
 
         // Display app version
         binding.tvAppVersion.text = getAppVersion()
 
 
-//        binding.LiveUserCardInternetSpeed.setOnClickListener {
-//
-//        }
 
         binding.CardInternetSpeed.setOnClickListener {
             openInternetSpeedTester()
@@ -72,7 +54,6 @@ class AboutFragment : Fragment() {
         binding.cardShare.setOnClickListener {
             TastyToast.makeText(requireContext(), "Share App clicked", TastyToast.LENGTH_LONG, TastyToast.SUCCESS)
 
-//            Toast.makeText(requireContext(), "Share App clicked", Toast.LENGTH_SHORT).show()
             shareApp()
         }
 
@@ -82,8 +63,6 @@ class AboutFragment : Fragment() {
 
         binding.cardUpdate.setOnClickListener {
             TastyToast.makeText(requireContext(), "Check for updates", TastyToast.LENGTH_LONG, TastyToast.INFO)
-
-//            Toast.makeText(requireContext(), "Check for updates", Toast.LENGTH_SHORT).show()
             openDownloadLink()
         }
 
@@ -99,7 +78,6 @@ class AboutFragment : Fragment() {
     private fun fetchLiveData() {
         TastyToast.makeText(requireContext(), "Error 69", TastyToast.LENGTH_LONG, TastyToast.ERROR)
 
-//        Toast.makeText(requireContext(), "Error 69", Toast.LENGTH_SHORT).show()
     }
 
     private fun getAppVersion(): String {
