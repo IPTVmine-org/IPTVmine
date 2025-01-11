@@ -105,7 +105,11 @@ By working on this app, we aim to:
  </picture>
 </a>
 
+## Contributors
 
+Please Feel free to contribute by submitting a Pull Request!
+
+[![](https://contrib.rocks/image?repo=samyak2403/IPTVmine)]
 
 ## Contributing
 We welcome contributions! Please follow the steps below to contribute:
