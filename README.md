@@ -109,7 +109,7 @@ By working on this app, we aim to:
 
 Please Feel free to contribute by submitting a Pull Request!
 
-[![](https://contrib.rocks/image?repo=samyak2403/IPTVmine)]
+[![](https://contrib.rocks/image?repo=samyak2403/IPTVmine)](https://github.com/samyak2403/IPTVmine/graphs/contributors)
 
 ## Contributing
 We welcome contributions! Please follow the steps below to contribute:
