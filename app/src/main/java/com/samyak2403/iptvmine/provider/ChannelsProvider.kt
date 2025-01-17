@@ -33,19 +33,28 @@ class ChannelsProvider : ViewModel() {
 
         fetchJob = viewModelScope.launch(Dispatchers.IO) {
             try {
-                val urlConnection = URL(sourceUrl).openConnection() as HttpURLConnection
+                val url = URL(sourceUrl)
+                val urlConnection = url.openConnection() as HttpURLConnection
                 urlConnection.apply {
                     connectTimeout = 10000
                     readTimeout = 10000
+                    requestMethod = "GET"
                 }
 
-                val fileText = urlConnection.inputStream.bufferedReader().use(BufferedReader::readText)
-                val tempChannels = parseM3UFile(fileText)
+                if (urlConnection.responseCode == HttpURLConnection.HTTP_OK) {
+                    val fileText = urlConnection.inputStream.bufferedReader().use(BufferedReader::readText)
+                    val tempChannels = parseM3UFile(fileText)
 
-                withContext(Dispatchers.Main) {
-                    _channels.value = tempChannels
-                    _error.value = null
+                    withContext(Dispatchers.Main) {
+                        _channels.value = tempChannels
+                        _error.value = null
+                    }
+                } else {
+                    withContext(Dispatchers.Main) {
+                        _error.value = "Error: HTTP ${urlConnection.responseCode}"
+                    }
                 }
+                urlConnection.disconnect()
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
                     _error.value = "Failed to fetch channels: ${e.localizedMessage}"
