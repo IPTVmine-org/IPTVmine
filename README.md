@@ -5,6 +5,7 @@
 ![pv](https://pageview.vercel.app/?github_user=IPTVmine)
 
 
+[![Latest release](https://img.shields.io/github/v/release/samyak2403/IPTVmine?include_prereleases)](https://github.com/samyak2403/IPTVmine/releases)
 
 ## 📲 Download the APK:
 # Indian IPTVmine App
