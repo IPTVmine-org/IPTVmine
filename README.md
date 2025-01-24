@@ -13,6 +13,8 @@
 
 [<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png" alt="Get it on GitHub" height="80">](https://github.com/samyak2403/IPTVmine/releases/latest)
 [<img src="https://gitlab.com/IzzyOnDroid/repo/-/raw/master/assets/IzzyOnDroid.png" height="80">](https://apt.izzysoft.de/fdroid/index/apk/com.samyak2403.iptvmine)
+[<img src="https://github.com/DrFiles/Sportsmine-reports/blob/main/AppIcons/sportsmine.png" height="80">](https://github.com/samyak2403/Sportsmine)
+
 
 
 ## Overview
