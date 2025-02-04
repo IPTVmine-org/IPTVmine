@@ -21,7 +21,7 @@ class ChannelsProvider : ViewModel() {
     private val _error = MutableLiveData<String?>()
     val error: LiveData<String?> get() = _error
 
-    private val sourceUrl = "https://raw.githubusercontent.com/FunctionError/PiratesTv/main/combined_playlist.m3u"
+    private val sourceUrl = ""
 
     private var fetchJob: Job? = null
 
