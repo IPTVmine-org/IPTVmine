@@ -16,6 +16,9 @@
 [<img src="https://github.com/DrFiles/Sportsmine-reports/blob/main/AppIcons/sportsmine.png" height="80">](https://github.com/samyak2403/Sportsmine)
 
 
+[<img src="https://github.com/user-attachments/assets/d99124ad-724b-4eeb-ba7d-a691396b75ce" alt="Get it on GitHub" height="80">](https://www.codester.com/items/55131/url-player-android-app-template)
+
+
 
 ## Overview
 The **Indian IPTV App** is a comprehensive platform that allows users to stream over 500 Indian TV channels directly from their devices. The app provides a seamless streaming experience with a wide variety of channels, including news, entertainment, sports, movies, and regional content.
