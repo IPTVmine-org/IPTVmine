@@ -16,7 +16,7 @@
 [<img src="https://github.com/DrFiles/Sportsmine-reports/blob/main/AppIcons/sportsmine.png" height="80">](https://github.com/samyak2403/Sportsmine)
 
 
-[<img src="https://github.com/user-attachments/assets/d99124ad-724b-4eeb-ba7d-a691396b75ce" alt="Get it on GitHub" height="80">](https://www.codester.com/items/55131/url-player-android-app-template)
+[<img src="https://github.com/user-attachments/assets/d99124ad-724b-4eeb-ba7d-a691396b75ce" alt="Get it on GitHub" height="500">](https://www.codester.com/items/55131/url-player-android-app-template)
 
 
 
