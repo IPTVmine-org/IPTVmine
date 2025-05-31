@@ -3,9 +3,7 @@
 <img src="https://github.com/samyak2403/IPTVmine/blob/master/app/src/main/res/drawable/ic_tv.png" width="100px"/>
 
 ![pv](https://pageview.vercel.app/?github_user=IPTVmine)
-
-
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=samyak2403&label=Profile%20views&color=0e75b6&style=flat" alt="samyak2403" /> </p>
+![pv](https://pageview.vercel.app/?github_user=IPTVmine-org/IPTVmine)
 
 
 
