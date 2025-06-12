@@ -4,6 +4,7 @@
 
 ![pv](https://pageview.vercel.app/?github_user=IPTVmine)
 ![pv](https://pageview.vercel.app/?github_user=IPTVmine-org/IPTVmine)
+![downloads](http://cranlogs.r-pkg.org/badges/grand-total/pageviews)
 
 
 
